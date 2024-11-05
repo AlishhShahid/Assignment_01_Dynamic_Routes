@@ -13,18 +13,34 @@ const CountryName = ({ params }: { params: { country_name: string } }) => {
     ];
 
     const country = countryDetails.find(c => c.name.toLowerCase().replace(' ', '_') === params.country_name.toLowerCase());
-
-    if (!country) {
-        return <div>Country not found</div>;
-    }
-
     return (
         <div>
-            <h1>Country Name: {country.name}</h1>
-            <h1>Capital: {country.capital}</h1>
-            <h1>Population: {country.population.toLocaleString()}</h1>
+          {country ? (
+            <div>
+              <h1>Country Name: {country.name}</h1>
+              <h1>Capital: {country.capital}</h1>
+              <h1>Population: {country.population.toLocaleString()}</h1>
+            </div>
+          ) : (
+            <div>
+              <h1>Country Not Found</h1>
+            </div>
+          )}
         </div>
-    );
+      );
 };
 
 export default CountryName;
+
+
+// if (!country) {
+//     return <div>Country not found</div>;
+// }
+
+// return (
+//     <div>
+//         <h1>Country Name: {country.name}</h1>
+//         <h1>Capital: {country.capital}</h1>
+//         <h1>Population: {country.population.toLocaleString()}</h1>
+//     </div>
+// );
