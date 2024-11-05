@@ -31,16 +31,3 @@ const CountryName = ({ params }: { params: { country_name: string } }) => {
 };
 
 export default CountryName;
-
-
-// if (!country) {
-//     return <div>Country not found</div>;
-// }
-
-// return (
-//     <div>
-//         <h1>Country Name: {country.name}</h1>
-//         <h1>Capital: {country.capital}</h1>
-//         <h1>Population: {country.population.toLocaleString()}</h1>
-//     </div>
-// );
